@@ -23,7 +23,7 @@ class _PlansState extends State<Plans> {
   late Map<DateTime , List<Event>> selectedEvents ;
 
    List bodyPartsU =[   
-     {"name":"chestS2.jpg","number":"Chest()"},{"name":"bicepsS2.jpg","number":"Biceps()"},{"name":"TricepsS2.jpg","number":"Biceps()"},{"name":"backS2.jpg","number":"Back()"},{"name":"shoulderS2.jpg","number":"Calf()"},{"name":"absS2.jpg","number":"Calf()"}];
+     {"name":"chestS2.jpg","number":"Chest()"},{"name":"bicepsS2.jpg","number":"Biceps()"},{"name":"TricepsS2.jpg","number":"Triceps()"},{"name":"backS2.jpg","number":"Back()"},{"name":"shoulderS2.jpg","number":"Shoulders()"},{"name":"absS2.jpg","number":"Calf()"}];
     
     List bodyPartsL =[
     
@@ -45,7 +45,7 @@ class _PlansState extends State<Plans> {
      
     
      appBar: AppBar(backgroundColor: mainColor,title:Text("Plans",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color: Colors.white))),
-     backgroundColor: Colors.grey.shade100,
+     backgroundColor: Colors.grey.shade200,
     
     floatingActionButton: FloatingActionButton.extended(
       label: Text("Add Events",style: TextStyle(color: Colors.white,fontSize: 12),),

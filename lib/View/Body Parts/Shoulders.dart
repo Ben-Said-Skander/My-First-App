@@ -15,14 +15,18 @@ import 'package:get/get.dart';
     Color secondColor = Colors.grey.shade800 ;
     List Shoulders=[
        
-       {"picture":"barbellbenchpress.jpg","name":" Barbell Bench Press"},
-       {"picture":"dumbbelpresses.jpg","name":" Barbell Press"},
-       {"picture":"dumbbellpullovers.jpg","name":" Dumbbel Pullovers"},
-       {"picture":"inclinedumbbelpresses.jpg","name":" Incline Dumbbel Press"},
-       {"picture":"pushups.jpg","name":" Push Ups"},
-       {"picture":"inclinepushups.jpg","name":" Incline Push Ups"},
-       {"picture":"parallelbardips.jpg","name":" Parallel Bar Dips"},
-       {"picture":"pecdeckflys.jpg","name":"Pec Deck Flys"},
+       {"picture":"barbellbenchpress.jpg","name":" Lateral Raises"},
+       {"picture":"dumbbelpresses.jpg","name":" Front Raises"},
+       {"picture":"dumbbellpullovers.jpg","name":" Upright Row"},
+       {"picture":"inclinedumbbelpresses.jpg","name":" Barbell Front Raises"},
+       {"picture":"pushups.jpg","name":" Arnold Press"},
+       {"picture":"inclinepushups.jpg","name":" Dumbbell Shoulder Press"},
+       {"picture":"parallelbardips.jpg","name":" Front Weighted Raises"},
+       {"picture":"pecdeckflys.jpg","name":" Seated Dumbbell Font Raise"},
+       {"picture":"inclinepushups.jpg","name":" Back Presses"},
+       {"picture":"parallelbardips.jpg","name":" Seated Front Presses"},
+       {"picture":"pecdeckflys.jpg","name":" Seated Dumbbel Presses"},
+       {"picture":"pecdeckflys.jpg","name":" Dumbbell Rear Deltoid Raises"},
 
     ];  
     
@@ -35,14 +39,26 @@ import 'package:get/get.dart';
         
         itemCount: Shoulders.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 15, 0,15),
            
             child: ListTile(
               
-              leading: Image.asset("IMAGE/Chest/${Shoulders[i]['picture']}"),
-              title: InkWell(child: Text("${Shoulders[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
-                             onTap:(){} ,
-            ),
+             leading: Container(height: 130,width: 130,
+               child: InkWell(child:Image.asset("IMAGE/Chest/${Shoulders[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${Shoulders[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${Shoulders[i]["name"]}"),
+                                           actions : [
+            
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
+             ),
+                  title:Text("${Shoulders[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
           ));
   
 

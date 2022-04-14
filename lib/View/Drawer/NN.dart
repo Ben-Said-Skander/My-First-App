@@ -105,20 +105,23 @@ class _NeedsState extends State<Needs> {
             fillColor: Colors.grey.shade200,
             filled: true,
           
-         )),SizedBox(height: 15,),    
+         )),SizedBox(height: 35,),    
        
-        Container(width: 250,height:50 ,
-          child: MaterialButton(onPressed:(){
-            setState(() {
-                weight = double.parse(weightController.value.text) ;
-            });
-            proteinNeedsCalculator(weight) ;
-            glucideNeedsCalculator(weight) ;
-            creatineNeedsCalculator(weight) ;
-            waterNeedsCalculator(weight) ;
-          },child:  Container(width: 180, height: 60,
-                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
-                     child: Center(child:Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18))),),color: mainColor,)),SizedBox(height: 25,),
+       Container(width: 250,height:50 ,
+                     
+            child: MaterialButton(onPressed:(){
+              setState(() {
+                  weight = double.parse(weightController.value.text) ;
+              });
+              proteinNeedsCalculator(weight) ;
+              glucideNeedsCalculator(weight) ;
+              creatineNeedsCalculator(weight) ;
+              waterNeedsCalculator(weight) ;
+            },
+                 child: Center(child:Container(  width: 200, height: 80,
+                   decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
+                   child: Center(child: Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18),))))),),
+          SizedBox(height: 25,),
 
         Padding(
           padding: const EdgeInsets.all(8.0),

@@ -23,6 +23,8 @@ import 'package:get/get.dart';
        {"picture":"inclinepushups.jpg","name":" Bench Jump "},
        {"picture":"parallelbardips.jpg","name":"Bulgarian Split Squat "},
        {"picture":"pecdeckflys.jpg","name":"Seated Leg Curls"},
+       {"picture":"pecdeckflys.jpg","name":"Dumbbell Lunges"},
+       {"picture":"pecdeckflys.jpg","name":"Angled Leg Presses "},
 
     ];  
     
@@ -35,14 +37,26 @@ import 'package:get/get.dart';
         
         itemCount: Legs.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 20, 0,15),
            
             child: ListTile(
               
-              leading: Image.asset("IMAGE/Chest/${Legs[i]['picture']}"),
-              title: InkWell(child: Text("${Legs[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
-                             onTap:(){} ,
-            ),
+              leading: Container(height: 130,width: 130,
+                child: InkWell(child:Image.asset("IMAGE/Chest/${Legs[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${Legs[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${Legs[i]["name"]}"),
+                                           actions : [
+            
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
+              ),
+                  title:Text("${Legs[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
           ));
   
 

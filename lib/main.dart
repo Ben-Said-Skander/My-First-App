@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       
          debugShowCheckedModeBanner: false,
-         home: BMI(),
+         home: IW(),
          routes: 
                { "HC1()":(context) => HC1() , "HC2()":(context) => HC2(), "HC3()":(context) => HC3(), "HC4()":(context) => HC4(), "HC5()":(context) => HC5(), "HC6()":(context) => HC6(),
                  "PW1()":(context) => PW1() , "PW2()":(context) => PW2(), "PW3()":(context) => PW3(), "PW4()":(context) => PW4(), "PW5()":(context) => PW5(), "PW6()":(context) => PW6(),

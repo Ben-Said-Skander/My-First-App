@@ -34,14 +34,26 @@ import 'package:get/get.dart';
         
         itemCount: Calf.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 16, 0,10),
            
             child: ListTile(
               
-              leading: Image.asset("IMAGE/Chest/${Calf[i]['picture']}"),
-              title: InkWell(child: Text("${Calf[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
-                             onTap:(){} ,
+            leading: Container(height: 130,width: 130,
+              child: InkWell(child:Image.asset("IMAGE/Chest/${Calf[i]['picture']}", fit: BoxFit.fill,  ), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${Calf[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${Calf[i]["name"]}"),
+                                           actions : [
+              
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
             ),
+                  title:Text("${Calf[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
           ));
   
 

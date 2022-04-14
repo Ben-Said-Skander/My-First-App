@@ -35,12 +35,20 @@ class _ProfilState extends State<Profil> {
        body: ListView(children: [    SizedBox(height: 20,),
         Padding(
             padding: EdgeInsets.fromLTRB(0,40, 0, 0),
-            child: Center(child: Text("Profil",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white) ,)),),SizedBox(height: 50,),
+            child: Row(children:[
+              SizedBox(width: 10,),
+              IconButton(onPressed:(){
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back,size: 25,color: Colors.white,)),SizedBox(width: 15,),
+              Center(child: Text("Profil",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white) ,)),
+          
+             ]),),SizedBox(height: 50,),
           Container(
             height: 800,
             decoration: BoxDecoration(
                color: Colors.white,
-               borderRadius: BorderRadius.only(topLeft: Radius.circular(55.0) , topRight:  Radius.circular(55.0)  )),
+               //   55     55
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(0.0) , topRight:  Radius.circular(100.0)  )),
             child: ListView.builder(
                itemCount: Profil.length,
                itemBuilder:(context,i){

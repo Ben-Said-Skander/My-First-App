@@ -37,14 +37,26 @@ import 'package:get/get.dart';
         
         itemCount: Biceps.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 15, 0,15),
            
             child: ListTile(
               
-              leading: Image.asset("IMAGE/Chest/${Biceps[i]['picture']}"),
-              title: InkWell(child: Text("${Biceps[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
-                             onTap:(){} ,
-            ),
+           leading: Container(height: 130 ,  width: 130,
+             child: InkWell(child:Image.asset("IMAGE/Chest/${Biceps[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${Biceps[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${Biceps[i]["name"]}"),
+                                           actions : [
+              
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
+           ),
+                  title:Text("${Biceps[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
           ));
   
 

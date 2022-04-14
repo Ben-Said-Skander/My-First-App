@@ -15,14 +15,18 @@ import 'package:get/get.dart';
     Color secondColor = Colors.grey.shade800 ;
     List Triceps=[
        
-       {"picture":"barbellbenchpress.jpg","name":" Barbell Bench Press"},
-       {"picture":"dumbbelpresses.jpg","name":" Barbell Press"},
-       {"picture":"dumbbellpullovers.jpg","name":" Dumbbel Pullovers"},
-       {"picture":"inclinedumbbelpresses.jpg","name":" Incline Dumbbel Press"},
-       {"picture":"pushups.jpg","name":" Push Ups"},
-       {"picture":"inclinepushups.jpg","name":" Incline Push Ups"},
-       {"picture":"parallelbardips.jpg","name":" Parallel Bar Dips"},
-       {"picture":"pecdeckflys.jpg","name":"Pec Deck Flys"},
+       {"picture":"barbellbenchpress.jpg","name":" Push Downs"},
+       {"picture":"dumbbelpresses.jpg","name":" Triceps Extensions"},
+       {"picture":"dumbbellpullovers.jpg","name":" Triceps KickBacks"},
+       {"picture":"inclinedumbbelpresses.jpg","name":" Triceps Dips"},
+       {"picture":"pushups.jpg","name":" Bar Triceps Extensions"},
+       {"picture":"inclinepushups.jpg","name":" Triceps Pushdown"},
+       {"picture":"parallelbardips.jpg","name":" Close Grip Bench Presses"},
+       {"picture":"pecdeckflys.jpg","name":" Dumbbell Row Kickback"},
+       {"picture":"inclinepushups.jpg","name":" Triceps Pushdown"},
+       {"picture":"parallelbardips.jpg","name":" One Arm Reverse Pushdown"},
+       {"picture":"pecdeckflys.jpg","name":" Seated Triceps Extensions"},
+       {"picture":"pecdeckflys.jpg","name":" Diamond Pushup"}
 
     ];  
     
@@ -35,14 +39,26 @@ import 'package:get/get.dart';
         
         itemCount: Triceps.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 15, 0,15),
            
             child: ListTile(
               
-              leading: Image.asset("IMAGE/Chest/${Triceps[i]['picture']}"),
-              title: InkWell(child: Text("${Triceps[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
-                             onTap:(){} ,
-            ),
+             leading: Container(height: 130,width: 130,
+               child: InkWell(child:Image.asset("IMAGE/Chest/${Triceps[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${Triceps[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${Triceps[i]["name"]}"),
+                                           actions : [
+            
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
+             ),
+                  title:Text("${Triceps[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
           ));
   
 

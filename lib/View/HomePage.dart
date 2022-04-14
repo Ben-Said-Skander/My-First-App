@@ -25,49 +25,49 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   Widget build(BuildContext context) {
     return Scaffold(
       
-      backgroundColor: Colors.white,
-      drawer: Container(color: secondColor,
-        child: Drawer(child: Container(color: secondColor,
+      backgroundColor:Colors.grey.shade500,
+      drawer: Container(color: Color.fromARGB(255, 31, 104, 87) ,
+        child: Drawer(child: Container(color: Color.fromARGB(255, 31, 104, 87) ,
           child: ListView(children:[
-           Container(color:secondColor, child: UserAccountsDrawerHeader(
-              decoration: BoxDecoration(color: secondColor),
-              accountName: Text("Ben Said Sknader",style:TextStyle(color: mainColor)),
+           Container(color:Color.fromARGB(255, 31, 104, 87)  , child: UserAccountsDrawerHeader(
+              decoration: BoxDecoration(color:Color.fromARGB(255, 31, 104, 87) ,),
+              accountName: Text("Ben Said Sknader",style:TextStyle(color: Colors.white)),
               
-                                        accountEmail: Text("bensaid303@gmail.com",style:TextStyle(color: mainColor),),
+                                        accountEmail: Text("bensaid303@gmail.com",style:TextStyle(color: Colors.white),),
                                         currentAccountPicture:CircleAvatar(backgroundImage:AssetImage("IMAGE/me.jpg") ,) ,),
             ),
                 
-            Text("------------------------------------------------------------------",style:TextStyle(color: mainColor)),
-             ListTile(leading: Icon(FontAwesomeIcons.user ,color: mainColor,),title: InkWell(onTap:(){
+            Text("---------------------------------------------------------------------",style:TextStyle(color: Colors.white)),
+             ListTile(leading: Icon(FontAwesomeIcons.user ,color: Colors.white,),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("Me()") ;
              } ,child:Text("Profile",style:TextStyle(color: Colors.white)),)) ,       
             
-             ListTile(leading: Icon(FontAwesomeIcons.scaleUnbalanced,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(FontAwesomeIcons.scaleUnbalanced,color: Colors.white,),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("BMI()") ;
              } ,child:Text("BMI Calculator",style:TextStyle(color: Colors.white)),)) ,   
            
-             ListTile(leading: Icon(FontAwesomeIcons.spinner ,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(FontAwesomeIcons.spinner ,color:Colors.white,),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("BMR()") ;
              } ,child:Text("Body Fat Calculator",style:TextStyle(color: Colors.white))),) ,   
             
-             ListTile(leading: Icon(FontAwesomeIcons.dumbbell,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(FontAwesomeIcons.dumbbell,color: Colors.white),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("IW()") ;
              } ,child:Text("Ideal Weight Calculator",style:TextStyle(color: Colors.white))),) , 
             
             
-             ListTile(leading: Icon(FontAwesomeIcons.bowlFood,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(FontAwesomeIcons.bowlFood,color: Colors.white),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("NN()") ;
              } ,child:Text("Nutrition Needs",style:TextStyle(color: Colors.white))),) ,  
             
-             ListTile(leading: Icon(FontAwesomeIcons.userDoctor,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(FontAwesomeIcons.userDoctor,color: Colors.white,),title: InkWell(onTap:(){
               // Navigator.of(context).pushNamed("") ;
              } ,child:Text("Contact a nutritionist",style:TextStyle(color: Colors.white))),) ,   
            
-             ListTile(leading: Icon(Icons.settings,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(Icons.settings,color:Colors.white),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("Setting()") ;
              } ,child:Text("Setting",style:TextStyle(color: Colors.white))),) ,   
             
-             ListTile(leading: Icon(Icons.logout_outlined,color: mainColor,),title: InkWell(onTap:(){
+             ListTile(leading: Icon(Icons.logout_outlined,color: Colors.white),title: InkWell(onTap:(){
            //    Navigator.of(context).pushNamed("") ;
              } ,child:Text("Log out",style:TextStyle(color: Colors.white))),) ,   
 

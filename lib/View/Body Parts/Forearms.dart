@@ -15,15 +15,11 @@ import 'package:get/get.dart';
     Color secondColor = Colors.grey.shade800 ;
     List Forearms=[
        
-       {"picture":"barbellbenchpress.jpg","name":" Barbell Bench Press"},
-       {"picture":"dumbbelpresses.jpg","name":" Barbell Press"},
-       {"picture":"dumbbellpullovers.jpg","name":" Dumbbel Pullovers"},
-       {"picture":"inclinedumbbelpresses.jpg","name":" Incline Dumbbel Press"},
-       {"picture":"pushups.jpg","name":" Push Ups"},
-       {"picture":"inclinepushups.jpg","name":" Incline Push Ups"},
-       {"picture":"parallelbardips.jpg","name":" Parallel Bar Dips"},
-       {"picture":"pecdeckflys.jpg","name":"Pec Deck Flys"},
-
+       {"picture":"barbellbenchpress.jpg","name":" Wrist Curls"},
+       {"picture":"dumbbelpresses.jpg","name":" Wrist Curls"},
+       {"picture":"dumbbellpullovers.jpg","name":"Dumbbell Wrist Twist"},
+       {"picture":"inclinedumbbelpresses.jpg","name":" Standing Wrist Curl"},
+   
     ];  
     
    @override
@@ -35,23 +31,25 @@ import 'package:get/get.dart';
         
         itemCount: Forearms.length,
         itemBuilder:(context,i){
-          return Container(padding: EdgeInsets.fromLTRB(15, 10, 0,10),
+          return Container(padding: EdgeInsets.fromLTRB(15, 15, 0,15),
            
             child: ListTile(
               
-              leading: InkWell(child:Image.asset("IMAGE/Forearms/${Forearms[i]['picture']}"), onTap:(){
-                               showDialog(context: context, builder:(context){
-                                   return AlertDialog(
-                                     title: Text("${Forearms[i]["name"]}",style: TextStyle(color:mainColor,),),
-                                     content: Text("${Forearms[i]["description"]}"),
-                                     actions : [
+              leading: Container(height: 130,width: 130,
+                child: InkWell(child:Image.asset("IMAGE/Chest/${Forearms[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                 showDialog(context: context, builder:(context){
+                                     return AlertDialog(
+                                       title: Text("${Forearms[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                       content: Text("${Forearms[i]["name"]}"),
+                                       actions : [
         
-                                     TextButton(onPressed:(){
-                                     Navigator.pop(context) ;
-                           }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
-                                   );
-                               });
-                             } ),
+                                       TextButton(onPressed:(){
+                                       Navigator.pop(context) ;
+                             }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                     );
+                                 });
+                               } ),
+              ),
               title:Text("${Forearms[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
                            
             ));       

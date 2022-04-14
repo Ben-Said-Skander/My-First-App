@@ -60,11 +60,9 @@ class _RecipieState extends State<Recipie> {
 
            Row(children: [ 
                
-                SizedBox(   height:130  , width: 15,),
-                IconButton( icon: Icon(Icons.arrow_back_ios),color: Colors.white,               
-                            onPressed: () {},     ),  
+                SizedBox(   height:130  , width: 15,),  
                 Container(
-                 padding: EdgeInsets.fromLTRB(15,0, 0, 0) ,
+                 padding: EdgeInsets.fromLTRB(19,0, 0, 0) ,
                  child: Text('Recipie',
                         style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25.0)), ),   ]), SizedBox(height: 40.0), 
  
@@ -75,44 +73,58 @@ class _RecipieState extends State<Recipie> {
                borderRadius: BorderRadius.only(topLeft: Radius.circular(85.0) )),
 
                padding: EdgeInsets.fromLTRB(20,20, 0, 0),
-               child:Text("hello".tr  ,  style: 
+               child:Text("Recipies Based on Eggs" ,  style: 
                      GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,),   
            Container(color: Colors.white,
-               height: 200, child: ListView.builder(scrollDirection: Axis.horizontal,
+               height: 250, child: ListView.builder(scrollDirection: Axis.horizontal,
                itemCount: Egg.length,
                itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child: Hero(child:Image.asset("IMAGE/Eggs/${Egg[i]["name"]}"),tag: "${Egg[i]["tag"]}",
-         ),onTap:(){Navigator.of(context).pushNamed("${Egg[i]["number"]}" );;}),);})),Container(height: 20,color: Colors.white,), 
+                       child:Column(children: [
+                          InkWell(child: Hero(child:Image.asset("IMAGE/Eggs/${Egg[i]["name"]}",height:180,width:250),tag: "${Egg[i]["tag"]}",
+                        ),onTap:(){Navigator.of(context).pushNamed("${Egg[i]["number"]}" );;}),SizedBox(height: 8,),
+                        Text("Food Name")
+                                    
+                       
+                       ]));})),Container(height: 20,color: Colors.white,), 
 
       
               Container(color: Colors.white,
                 padding: EdgeInsets.fromLTRB(10,20, 0, 0),
                 child: Text("High-Protein and Low-Carb",style: GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,), 
-              Container(height: 200,child: ListView.builder(scrollDirection: Axis.horizontal,
+              Container(color:Colors.white , height: 250,child: ListView.builder(scrollDirection: Axis.horizontal,
                 itemCount: HP.length,
                 itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child: Hero(child:Image.asset("IMAGE/High-Protein/${HP[i]["name"]}"),tag:"${HP[i]["tag"]}" ,)
-                       ,onTap:(){Navigator.of(context).pushNamed("${HP[i]["number"]}" );;}),);})),Container(height: 20,color: Colors.white,), 
+                       child: Column(children: [
+
+                         InkWell(child: Hero(child:Image.asset("IMAGE/High-Protein/${HP[i]["name"]}",height:180,width:250),tag:"${HP[i]["tag"]}" ,)
+                                       ,onTap:(){Navigator.of(context).pushNamed("${HP[i]["number"]}" );;}),SizedBox(height: 8,),
+
+                         Text("Food Name")
+                         ]))  ;})),Container(height: 20,color: Colors.white,), 
 
               
                Container(color: Colors.white,
                  padding: EdgeInsets.fromLTRB(10,20, 0, 0),
                  child: Text("High Carb ",
                  style:GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 20,color: Colors.white,), 
-               Container (height: 200, child: ListView.builder(scrollDirection: Axis.horizontal,
+               Container (height: 250, child: ListView.builder(scrollDirection: Axis.horizontal,
                  itemCount: highCarb.length,
                  itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child:Hero(child:Image.asset("IMAGE/HighCarbs/${highCarb[i]["name"]}"),tag: "${highCarb[i]["tag"]}",
-          ),onTap:(){Navigator.of(context).pushNamed("${highCarb[i]["number"]}" );;}),);})),Container(height: 20,color: Colors.white,), 
+                       child: Column(children: [InkWell(child:Hero(child:Image.asset("IMAGE/HighCarbs/${highCarb[i]["name"]}",height:180,width:250),tag: "${highCarb[i]["tag"]}",
+                                                              ),onTap:(){Navigator.of(context).pushNamed("${highCarb[i]["number"]}" );;}),SizedBox(height: 8,),
+          
+                                                Text("Food Name")
+          
+                  ]));})),Container(height: 20,color: Colors.white,), 
                      
            
               Container(color: Colors.white,
@@ -120,28 +132,36 @@ class _RecipieState extends State<Recipie> {
                 child: Text("Pre-Workout",
                 style: GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,), 
               Container(color: Colors.white,
-                height: 200,child: ListView.builder(scrollDirection: Axis.horizontal,
+                height: 250,child: ListView.builder(scrollDirection: Axis.horizontal,
                 itemCount: preWorkout.length,
                 itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child: Hero(child:Image.asset("IMAGE/PreWorkout/${preWorkout[i]["name"]}"),tag: "${preWorkout[i]["tag"]}",
-              ),onTap:(){Navigator.of(context).pushNamed("${preWorkout[i]["number"]}" );;}),);})),Container(height: 20,color: Colors.white,), 
+                       child: Column(children: [InkWell(child: Hero(child:Image.asset("IMAGE/PreWorkout/${preWorkout[i]["name"]}",height:180,width:250),tag: "${preWorkout[i]["tag"]}",
+                                                              ),onTap:(){Navigator.of(context).pushNamed("${preWorkout[i]["number"]}" );;}),SizedBox(height: 8,),
+                                                 Text("Food Name")
+              
+                ]));})),Container(height: 20,color: Colors.white,), 
 
+             
               Container(color: Colors.white,
                 padding: EdgeInsets.fromLTRB(10,20, 0, 0),
                 child: Text("Low Sugar",
                 style: GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,), 
               Container(color: Colors.white,
-                height: 200,child: ListView.builder(scrollDirection: Axis.horizontal,
+                height: 250,child: ListView.builder(scrollDirection: Axis.horizontal,
                 itemCount: lowSugar.length,
                 itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child: Hero(child:Image.asset("IMAGE/Low-Sugar/${lowSugar[i]["name"]}"),tag: "${lowSugar[i]["tag"]}",
-              ),onTap:(){Navigator.of(context).pushNamed("${lowSugar[i]["number"]}" );;}),);})),Container(height: 15,color: Colors.white,), 
+                       child: Column(children: [ InkWell(child: Hero(child:Image.asset("IMAGE/Low-Sugar/${lowSugar[i]["name"]}",height:180,width:250),tag: "${lowSugar[i]["tag"]}",
+                                                               ),onTap:(){Navigator.of(context).pushNamed("${lowSugar[i]["number"]}" );;}),SizedBox(height: 8,),
+                                                               
+                                                 Text("Food Name")                                       
+                                                                     
+                ,]));})),Container(height: 15,color: Colors.white,), 
 
                       
               Container(color: Colors.white,
@@ -149,13 +169,19 @@ class _RecipieState extends State<Recipie> {
                 child: Text("Keto",
                 style: GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,), 
               Container(color: Colors.white,
-                height: 200,child: ListView.builder(scrollDirection: Axis.horizontal,
+                height: 250,child: ListView.builder(scrollDirection: Axis.horizontal,
                 itemCount: keto.length,
                 itemBuilder: (context,i){
-                     return Container(
+                     return Container(height: 180,width: 250,
                        color: Colors.white,
                        padding: const EdgeInsets.all(8.0),
-                       child: InkWell(child: Hero(child:Image.asset("IMAGE/Keto/${keto[i]["name"]}"),tag: "${keto[i]["tag"]}",),
-                       onTap:(){Navigator.of(context).pushNamed("${keto[i]["number"]}" );;}),);})),Container(height: 15,color: Colors.white,), ]),
+                       child: Column(children: [
+                         
+                         InkWell(child: Hero(child:Image.asset("IMAGE/Keto/${keto[i]["name"]}",height:180,width:250),tag: "${keto[i]["tag"]}",),
+                                        onTap:(){Navigator.of(context).pushNamed("${keto[i]["number"]}" );;}),SizedBox(height: 8,),
+                         Text("Food Name")               
+   
+                 ,]));})),Container(height: 15,color: Colors.white,), ]),
+     
          ) ;     }}
       

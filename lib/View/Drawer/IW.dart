@@ -89,7 +89,7 @@ class _IWState extends State<IW> {
             fillColor: Colors.grey.shade200,
             filled: true,
           
-         )),SizedBox(height: 15,),
+         )),SizedBox(height: 25,),
 
          Padding(
            padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
@@ -106,7 +106,7 @@ class _IWState extends State<IW> {
             fillColor: Colors.grey.shade200,
             filled: true,
   
-         ),),SizedBox(height: 20,),
+         ),),SizedBox(height: 30,),
         
         Container(width: 250,height:50 ,
           child: MaterialButton(onPressed:(){
@@ -120,11 +120,11 @@ class _IWState extends State<IW> {
             }else if(selectedIndex==0){
               menIwCalculator(height) ;
             }
-          },child:  Container(width: 180, height: 60,
+          },child: Container(width: 180, height: 60,
                      decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
-                     child: Center(child:Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18))),),color: mainColor,)),SizedBox(height: 25,),
+                     child: Center(child:Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18),))),color: mainColor,)),SizedBox(height: 30,),
 
         Center(child: Text("Your Ideal Weight is   :",style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w800))),SizedBox(height: 15,),
-        Center(child: Text("${result}",style: TextStyle(color: Colors.black,fontSize: 30, fontWeight: FontWeight.w700),)), SizedBox(height: 25,),
+        Center(child: Text("${result}",style: TextStyle(color: Colors.black,fontSize: 30, fontWeight: FontWeight.w700),)), SizedBox(height: 32,),
         
      ],));  }}

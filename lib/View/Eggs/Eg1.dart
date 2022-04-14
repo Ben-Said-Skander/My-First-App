@@ -18,26 +18,21 @@ class _Egg1State extends State<Egg1> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-     // appBar: AppBar(backgroundColor: mainColor,title: Text("Skillet Lemon Chicken with Spinach",style:TextStyle(color: Colors.white , fontSize: 18)),),
-     // backgroundColor: mainColor,
       body: ListView(children: [
 
-       Hero(child: Image.asset("IMAGE/Eggs/Eg1.jpg", width: double.infinity),tag:"Eg1"),
-       // SizedBox(height: 15,),
+        Hero(child: Image.asset("IMAGE/Eggs/Eg1.jpg", width: double.infinity),tag:"Eg1"),
         Container( 
                
                decoration: BoxDecoration(
                color: mainColor,
-               borderRadius: BorderRadius.only(topLeft: Radius.circular(23) , topRight:  Radius.circular(23)  )
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(40) , topRight:  Radius.circular(40)  )
           ),
           child: Container(height: 600,
-            child: ListView(children: 
+            child: ListView(children:  [
             
-            
-            [
              SizedBox(height: 20,),
             Padding(
-              padding: EdgeInsets.fromLTRB(9, 0,0, 0),
+              padding: EdgeInsets.fromLTRB(13, 0,0, 0),
               child: Text("Skillet Lemon Chicken with Spinach",style:TextStyle(color: Colors.white , fontSize: 18 , fontWeight: FontWeight .bold)),
             ),SizedBox(height:12),
        

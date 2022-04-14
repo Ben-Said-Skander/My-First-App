@@ -25,13 +25,17 @@ class _AccountState extends State<Account> {
     return Scaffold(
        
        backgroundColor: mainColor,
-       //appBar: AppBar(backgroundColor: mainColor,title:Text("Edit Account",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color:Colors.white))),
        body: ListView(children: [    SizedBox(height: 25,),
           Padding(
             padding: EdgeInsets.fromLTRB(0,40, 0, 0),
-            child: Center(child: Text("Account",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white) ,)),
-          ),
-          SizedBox(height: 80,),
+            child:Row(children:[
+              SizedBox(width: 10,),
+              IconButton(onPressed:(){
+                Navigator.pop(context);
+              }, icon: Icon(Icons.arrow_back,size: 25,color: Colors.white,)),SizedBox(width: 15,),
+              Center(child: Text("Account",style:TextStyle(fontSize: 25,fontWeight: FontWeight.bold,color: Colors.white) ,)),
+          
+             ])), SizedBox(height: 80,),
                 Container(height: 400,
                 decoration: BoxDecoration(
                color: Colors.white,

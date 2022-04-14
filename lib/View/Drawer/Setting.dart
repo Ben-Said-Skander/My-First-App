@@ -16,8 +16,23 @@ class _SettingsState extends State<Settings> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(backgroundColor: mainColor,title:Text("Setting",style:TextStyle(fontSize: 20,fontWeight: FontWeight.w700,color:Colors.white))),
-      body: ListView(children: [    SizedBox(height: 25,),
+      backgroundColor: mainColor,
+      body: ListView(children: [   SizedBox(height: 26,),
+        Padding(
+          padding:EdgeInsets.fromLTRB(23, 0, 0, 0) ,
+          child: Container(child: Text("Settings",style:TextStyle(color: Colors.white,fontSize: 25,fontWeight: FontWeight.bold))),
+        ),
+        SizedBox(height: 80,) , 
+        Container(
+          
+          decoration: BoxDecoration(
+               color: Colors.white,
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(55) , topRight:  Radius.circular(55)  )),
+               child:Container(height: 800,
+                 child: ListView(children: [
+        
+        
+         SizedBox(height: 25,),
        
        ListTile(leading: Icon(Icons.account_balance),title:InkWell(child: Text("Account",style: TextStyle(color: mainColor, fontSize: 17),),onTap:(){
          Navigator.of(context).pushNamed("Account()");
@@ -31,12 +46,12 @@ class _SettingsState extends State<Settings> {
        ListTile(leading: Icon(Icons.help_center),title:InkWell(child: Text("About us",style: TextStyle(color: mainColor, fontSize: 17),),onTap:(){
        //  Navigator.of(context).pushNamed("");
        })),SizedBox(height: 15,),
-       SizedBox(height: 35,),
+       SizedBox(height: 65,),
         
         
-        Container(width: 250,height:50 ,
-          child: MaterialButton(onPressed:(){}
-          ,child: Text("Log Out",style: TextStyle(color: mainColor,fontSize: 18),),color: Colors.white,)),SizedBox(height: 25,),
+         Container(width: 140, height: 60,
+                       decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
+                       child: Center(child:Text("Log Out",style: TextStyle(color: Colors.white,fontSize: 18),))),SizedBox(height: 25,),
 
 
 
@@ -48,5 +63,6 @@ class _SettingsState extends State<Settings> {
 
 
       ]),
-    ) ; }}
+               ),
+      )])) ; }}
  

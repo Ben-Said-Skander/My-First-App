@@ -45,19 +45,21 @@ import 'package:get/get.dart';
                
                 child: ListTile(
                   
-                  leading: InkWell(child:Image.asset("IMAGE/Chest/${chest[i]['picture']}"), onTap:(){
-                                   showDialog(context: context, builder:(context){
-                                       return AlertDialog(
-                                         title: Text("${chest[i]["name"]}",style: TextStyle(color:mainColor,),),
-                                         content: Text("${chest[i]["description"]}"),
-                                         actions : [
+                  leading: Container(height: 130,width: 130,
+                    child: InkWell(child:Image.asset("IMAGE/Chest/${chest[i]['picture']}",fit: BoxFit.fill,), onTap:(){
+                                     showDialog(context: context, builder:(context){
+                                         return AlertDialog(
+                                           title: Text("${chest[i]["name"]}",style: TextStyle(color:mainColor,),),
+                                           content: Text("${chest[i]["description"]}"),
+                                           actions : [
             
-                                         TextButton(onPressed:(){
-                                         Navigator.pop(context) ;
-                               }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
-                                       );
-                                   });
-                                 } ),
+                                           TextButton(onPressed:(){
+                                           Navigator.pop(context) ;
+                                 }, child: Text("Ok",style: TextStyle(color: mainColor,fontSize: 15),)),]
+                                         );
+                                     });
+                                   } ),
+                  ),
                   title:Text("${chest[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
                                
                 )); }),

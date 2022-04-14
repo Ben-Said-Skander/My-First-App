@@ -91,7 +91,7 @@ class _BMRState extends State<BMR> {
             fillColor: Colors.grey.shade200,
             filled: true,
            
-         )),SizedBox(height: 15,),
+         )),SizedBox(height: 20,),
 
          Padding(
            padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
@@ -136,11 +136,11 @@ class _BMRState extends State<BMR> {
             });
            
             calculateBMR(height ,weight,age) ;
-          },child:  Container(width: 180, height: 60,
-                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
-                     child: Center(child:Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18)))),color: mainColor,)),SizedBox(height: 25,),
+          })),///SizedBox(height: 25,),
 
-        Center(child: Text("Your body fat % is   :",style: TextStyle(color: Colors.black,fontSize: 20,fontWeight: FontWeight.w800))),SizedBox(height: 15,),
+        Center(child: Container(width: 180, height: 60,
+                     decoration: BoxDecoration(borderRadius: BorderRadius.circular(30),color: mainColor),
+                     child: Center(child:Text("Calculate",style: TextStyle(color: Colors.white,fontSize: 18),)))),SizedBox(height: 15,),
         Center(child: Text("${result}",style: TextStyle(color: Colors.black,fontSize: 30, fontWeight: FontWeight.w700),)), SizedBox(height: 25,),
         
      ],));  }}
