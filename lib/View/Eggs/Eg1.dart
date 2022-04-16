@@ -25,7 +25,7 @@ class _Egg1State extends State<Egg1> {
                
                decoration: BoxDecoration(
                color: mainColor,
-               borderRadius: BorderRadius.only(topLeft: Radius.circular(40) , topRight:  Radius.circular(40)  )
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(20) , topRight:  Radius.circular(20)  )
           ),
           child: Container(height: 600,
             child: ListView(children:  [

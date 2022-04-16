@@ -1,6 +1,11 @@
 // ignore_for_file: prefer_const_constructors, camel_case_types, use_key_in_widget_constructors, unused_import, unused_local_variable, non_constant_identifier_names, avoid_print, unnecessary_import
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:getx/View/Authentication/HealthInfoM.dart';
+import 'package:getx/View/Authentication/PersonalInfo.dart';
+import 'package:getx/View/Authentication/SignUp.dart';
+import 'package:getx/View/FirstPage.dart';
+import 'package:getx/View/HealthInfoF.dart';
 import 'package:getx/View/Profil.dart';
 import 'package:getx/View/Diary.dart';
 import 'package:getx/View/Drawer/BMI.dart';
@@ -46,11 +51,14 @@ import 'package:getx/View/Keto/k7.dart';
 import 'package:getx/View/Keto/k8.dart';
 import 'package:getx/View/Recipie.dart';
 import 'package:getx/View/Authentication/SignIn.dart';
-import 'package:getx/View/Authentication/Signup.dart';
+
 import 'package:flutter/material.dart' ;
 import 'package:get/get.dart';
 import 'package:getx/View/Plans.dart';
-import 'package:getx/View/Workouts/Strength.dart';
+import 'package:getx/View/Workouts/Bands.dart';
+import 'package:getx/View/Workouts/Cardio.dart';
+import 'package:getx/View/Workouts/Home.dart';
+import 'package:getx/View/Workouts/Yoga.dart';
 import 'View/Keto/k1.dart';
 import 'View/Keto/k2.dart';
 import 'View/Keto/k3.dart';
@@ -80,27 +88,30 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       
          debugShowCheckedModeBanner: false,
-         home: IW(),
+         home: PersonalInfo()  ,
          routes: 
                { "HC1()":(context) => HC1() , "HC2()":(context) => HC2(), "HC3()":(context) => HC3(), "HC4()":(context) => HC4(), "HC5()":(context) => HC5(), "HC6()":(context) => HC6(),
                  "PW1()":(context) => PW1() , "PW2()":(context) => PW2(), "PW3()":(context) => PW3(), "PW4()":(context) => PW4(), "PW5()":(context) => PW5(), "PW6()":(context) => PW6(),
                  "LW1()":(context) => LW1() , "LW2()":(context) => LW2(), "LW3()":(context) => LW3(), "LW4()":(context) => LW4(), "LW5()":(context) => LW5(), "LW6()":(context) => LW6(),
-                 "k1()":(context) => k1() , "k2()":(context) => k2(), "k3()":(context) => k3(), "k4()":(context) => k4(), "k5()":(context) => k5(), "k6()":(context) => k6(), "k7()":(context) => k7(),"k8()":(context) => k8(),
+                 "k1()":(context) =>  k1()  , "k2()":(context) =>  k2() , "k3()":(context) =>  k3(),  "k4()":(context) =>  k4(),  "k5()":(context) =>  k5(),  "k6()":(context) =>  k6(), "k7()":(context) => k7(),"k8()":(context) => k8(),
                  "HP1()":(context) => HP1() , "HP2()":(context) => HP2(), "HP3()":(context) => HP3(), "HP4()":(context) => HP4(), "HP5()":(context) => HP5(), "HP6()":(context) => HP6(),
-                 "Eg1()":(context) => Egg1() , "Eg2()":(context) => Egg2(), "Eg3()":(context) => Egg3(), "Eg4()":(context) => Egg4(), "Eg5()":(context) => Egg5(), "Eg6()":(context) => Egg6(),"Eg7()":(context) => Egg7(), "Eg8()":(context) => Egg8(),"Eg9()":(context) => Egg9(), "Eg10()":(context) => Egg10(),
+                 "Eg1()":(context) => Egg1(), "Eg2()":(context) => Egg2(),"Eg3()":(context) => Egg3(),"Eg4()":(context) => Egg4(),"Eg5()":(context) => Egg5(),"Eg6()":(context) => Egg6(),"Eg7()":(context) => Egg7(), "Eg8()":(context) => Egg8(),"Eg9()":(context) => Egg9(), "Eg10()":(context) => Egg10(),
               
-                 "Back()":(context) => Back() , "Biceps()":(context) => Biceps(), "Calf()":(context) => Calf(), "Chest()":(context) => Chest(), "Forearms()":(context) => Forearms(), "Legs()":(context) => Legs(), "Shoulders()":(context) => Shoulders(), "Triceps()":(context) => Triceps(),
-                 "Strength()":(context) => Strength() ,
+                 "Back()":(context) =>Back() ,"Biceps()":(context) => Biceps(), "Calf()":(context) => Calf(),    "Chest()":(context) => Chest(), "Forearms()":(context) => Forearms(), "Legs()":(context) => Legs(), "Shoulders()":(context) => Shoulders(), "Triceps()":(context) => Triceps(),             
+                 "Yoga()":(context) =>Yoga() ,"HomeW()":(context) => HomeW() ,  "Bands()":(context) => Bands() , "Cardio()":(context) => Cardio() ,
 
-                 "Diary()" :(context) => Diary(),
-                 "Profil()" :(context) => Profil(),
+                 "Diary()" :(context) =>   Diary(),
+                 "Profil()" :(context) =>  Profil(),
                  "Account()" :(context) => Account(),
-                 "BMI()" :(context) => BMI(),
-                 "BMR()" :(context) => BMR(),
-                 "IW()" :(context) => IW(),
-                 "NN()" :(context) => Needs(),
+                 "BMI()" :(context) =>     BMI(),
+                 "BMR()" :(context) =>     BMR(),
+                 "IW()" :(context) =>      IW(),
+                 "NN()" :(context) =>      Needs(),
                  "Setting()" :(context) => Settings(),
-                 "Me()" :(context) => Me(),
+                 "Me()" :(context) =>      Me(),
+                 "SignIn()" :(context) =>  SignIn(),     "SignUp()" :(context) =>  SignUp(), 
+                 "PInfo()" :(context) =>   PersonalInfo(), "HInfo()" :(context) =>  HealthInfoM(),"HInfoF()" :(context) =>  HealthInfoF(),
+                 "FPage()" :(context) =>   FirstPage(),"HomePage()" :(context) =>   HomePage(),
                } ,
           
                translations: LocaleString(),

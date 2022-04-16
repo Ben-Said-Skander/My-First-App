@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart' ;
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
  
  class Forearms extends StatefulWidget {
    @override
@@ -50,7 +51,7 @@ import 'package:get/get.dart';
                                  });
                                } ),
               ),
-              title:Text("${Forearms[i]['name']}",style: TextStyle(color: secondColor,fontSize: 18),),
+              title:Text("${Forearms[i]['name']}",style:  GoogleFonts.bebasNeue(color: Colors.black,fontSize: 19),),
                            
             ));       
       }));}}

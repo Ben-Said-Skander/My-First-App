@@ -4,14 +4,14 @@ import 'package:flutter/material.dart' ;
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:youtube_player_flutter/youtube_player_flutter.dart'; 
-class Strength extends StatefulWidget {
-  Strength({Key? key}) : super(key: key);
+class Cardio extends StatefulWidget {
+  Cardio({Key? key}) : super(key: key);
 
   @override
-  State<Strength> createState() => _StrengthState();
+  State<Cardio> createState() => _CardioState();
 }
 
-class _StrengthState extends State<Strength> {
+class _CardioState extends State<Cardio> {
 
   Color mainColor = Colors.tealAccent.shade700 ;
   Color secondColor = Colors.grey.shade800 ;
@@ -25,7 +25,7 @@ class _StrengthState extends State<Strength> {
   ];
 
   final List videosTitles=[
-  {"name":"Strength Workout By fraser Wilson"},
+  {"name":"Cardio Workout By fraser Wilson"},
   {"name":"Memphis w Hamza"},
   {"name":"N'insite pas"},
   ];
@@ -81,7 +81,7 @@ class _StrengthState extends State<Strength> {
   Widget build(BuildContext context) {
     return Scaffold(
 
-      appBar: AppBar(leading:IconButton(onPressed:(){}, icon:Icon(Icons.exit_to_app)),backgroundColor: mainColor,title: Text("Strength Workout",style:TextStyle(color: Colors.white , fontSize: 18),),),
+      appBar: AppBar(leading:IconButton(onPressed:(){}, icon:Icon(Icons.exit_to_app)),backgroundColor: mainColor,title: Text("Cardio Workout",style:TextStyle(color: Colors.white , fontSize: 18),),),
       body: ListView.builder(
         itemCount: _idList.length,
         itemBuilder:(context,i){
@@ -121,5 +121,3 @@ class _StrengthState extends State<Strength> {
     
       ) )),SizedBox(height: 15,)]));}
       ));}}
-
-  

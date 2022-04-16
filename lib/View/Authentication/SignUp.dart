@@ -1,6 +1,7 @@
-// ignore_for_file: prefer_const_constructors, camel_case_types, use_key_in_widget_constructors, unused_import, unused_local_variable, non_constant_identifier_names, avoid_print, unnecessary_import
+// ignore_for_file: prefer_const_constructors, camel_case_types, use_key_in_widget_constructors, unused_import, unused_local_variable, non_constant_identifier_names, avoid_print, unnecessary_import, deprecated_member_use
 
 import 'package:flutter/material.dart' ;
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 
 class SignUp extends StatefulWidget {
@@ -13,7 +14,6 @@ class SignUp extends StatefulWidget {
 class _SignUpState extends State<SignUp> {
   
   Color mainColor = Colors.tealAccent.shade700 ;
-  Color secondColor = Colors.grey.shade800 ;
   Color fColor= Color(0xff3b5998) ;
   
   final TextEditingController emailController = TextEditingController();
@@ -21,117 +21,129 @@ class _SignUpState extends State<SignUp> {
   final TextEditingController fNameController = TextEditingController();
   final TextEditingController lNameController = TextEditingController();
   GlobalKey<FormState> Cle = new GlobalKey<FormState>() ;
+  Color genre=Colors.grey.shade300 ;
+  Color other=Colors.grey.shade300 ;
+    int selectedIndex=0  ;
+    
+     void chooseGenre(int index){
+    if(index == 0 ){
+       setState(() {
+         genre= mainColor;
+         other = Colors.grey.shade200 ;
+       });
+    }else if(index == 1){
+      setState(() {
+        other =mainColor ;
+        genre = Colors.grey.shade200 ;
+      });  }}
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
+      backgroundColor: mainColor,
       body: ListView(children: [
-
-  SizedBox(height: 25,)  ,
-      Center(child: Text("App Name",style: TextStyle(color: mainColor,fontSize: 25),),),
-      SizedBox(height: 80,)  ,
-      Center(
-        child: SizedBox(width: 320,height:60,
-          child: TextFormField(
-            
-            obscureText: false ,
-            decoration: InputDecoration(     
-            hintText: "First Name",
-            hintStyle: TextStyle(color: Colors.white,fontSize: 12),
-            fillColor: mainColor,
-            filled: true,
-
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
-             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),  SizedBox(height:15),
-          
-         Center(
-        child: SizedBox(width: 320,height:60,
-          child: TextFormField(
-            
-            obscureText: false ,
-            decoration: InputDecoration(     
-            hintText: "Last Name",
-            hintStyle: TextStyle(color: Colors.white,fontSize: 12),
-            fillColor: mainColor,
-            filled: true,
-
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
-             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),  SizedBox(height:15),
-
- Center(
-        child: SizedBox(width: 320,height:60,
-          child: TextFormField(
-            
-            obscureText: false ,
-            decoration: InputDecoration(     
-            hintText: "Email",
-            hintStyle: TextStyle(color: Colors.white,fontSize: 12),
-            fillColor: mainColor,
-            filled: true,
-
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
-             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),  SizedBox(height:15),
-
-
- Center(
-        child: SizedBox(width: 320,height:60,
-          child: TextFormField(
-            
-            obscureText: false ,
-            decoration: InputDecoration(     
-            hintText: "Password",
-            hintStyle: TextStyle(color: Colors.white,fontSize: 12),
-            fillColor: mainColor,
-            filled: true,
-
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
-             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),  SizedBox(height:15),
-
-
- Center(
-        child: SizedBox(width: 320,height:60,
-          child: TextFormField(
-            
-            obscureText: false ,
-            decoration: InputDecoration(     
-            hintText: "Birth Date ",
-            hintStyle: TextStyle(color: Colors.white,fontSize: 12),
-            fillColor: mainColor,
-            filled: true,
-
-             enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
-             focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),  SizedBox(height:15),
-
-Center(child: MaterialButton(onPressed:(){},child: Text("Sign Up ",style: TextStyle(color: Colors.white,fontSize: 15),),color: mainColor,),),SizedBox(height: 25,),
-
- Container(padding: EdgeInsets.fromLTRB(0, 50, 0, 50),
-          child: Center(child: Text("-----------------------------------  Or  -----------------------------------",style: TextStyle(fontSize: 15,color: secondColor),))),
-               
-Container(height: 40,width: 30,padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
-  child:   MaterialButton(
-  
-           color: fColor,
-           onPressed:(){},child: Row(children: [
-           Image.asset("IMAGE/Fab.png"),
-           Text("          Continue with Facebook",style: TextStyle(color: Colors.white,fontSize: 15),)],),),),
-   
-       SizedBox(height: 40,),
         
-         Container(width: 50,height: 40,padding: EdgeInsets.fromLTRB(15, 0, 15, 0),
- child: MaterialButton(
-         color: Colors.white,
-         onPressed:(){},child: Row(children: [
-         Image.asset("IMAGE/g.jpg"),
-         Text("          Continue with Google",style: TextStyle(color: secondColor,fontSize: 15),)
-       ],),)),SizedBox(height: 20,),
+        SizedBox(height: 95,),
+        Container(height: 35,          
+               decoration: BoxDecoration(
+               color: Colors.white,
+               borderRadius: BorderRadius.only(topLeft: Radius.circular(40.0) , topRight:  Radius.circular(40) , )),),
+ 
+         
+        Container(color: Colors.white,
+          padding: EdgeInsets.fromLTRB(35, 0, 0, 26),
+          child: Text("Sign Up",style: TextStyle(color: Colors.black,fontSize: 25,fontWeight: FontWeight.bold),),),
+        Container(color: Colors.white,padding: EdgeInsets.fromLTRB(0, 55, 0, 0),
+        child: Center(
+          child: Container(width: 320,height:100,
+            child: TextFormField(
+              
+              obscureText: false ,
+              decoration: InputDecoration(     
+              hintText: "First Name",
+              hintStyle: TextStyle(color: Colors.white,fontSize: 12),
+              fillColor: mainColor,
+              filled: true,
 
-     Center(
-       child: Row(children: [ Text("                        Already have an account ? ",style: TextStyle(color: secondColor,fontSize: 15), ),
-        InkWell(onTap:(){} ,child: Text("Log In ",style: TextStyle(color:secondColor,fontSize: 15,fontWeight: FontWeight.w800),)
+               enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
+               focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),
+      ), 
+          
+         
+     Container(color: Colors.white,padding:  EdgeInsets.fromLTRB(0, 0, 0, 16),
+       child: Center(
+          child: Container(width: 320,height:60,
+            child: TextFormField(
+              
+              obscureText: false ,
+              decoration: InputDecoration(     
+              hintText: "Email",
+              hintStyle: TextStyle(color: Colors.white,fontSize: 12),
+              fillColor: mainColor,
+              filled: true,
+
+               enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
+               focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),
+     ), 
 
 
+    Container(color: Colors.white,padding:  EdgeInsets.fromLTRB(0, 16, 0, 16),
+      child: Center(
+          child: Container(width: 320,height:60,
+            child: TextFormField(
+              
+              obscureText: false ,
+              decoration: InputDecoration(     
+              hintText: "Password",
+              hintStyle: TextStyle(color: Colors.white,fontSize: 12),
+              fillColor: mainColor,
+              filled: true,
 
+               enabledBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),
+               focusedBorder: OutlineInputBorder(borderRadius: BorderRadius.circular(20),borderSide:BorderSide(color:mainColor ) ,),))),),
+    ), 
 
-         )]),),SizedBox(height: 20,)
+      
+
+  Container(height: 100,
+   color: Colors.white, 
+    padding:  EdgeInsets.fromLTRB(0, 15, 0, 15),
+    child: Center(child: MaterialButton(onPressed:(){
+       Navigator.of(context).pushReplacementNamed("PInfo")  ;
+    },child: Text("Sign Up ",style: TextStyle(color: Colors.white,fontSize: 15),),color: mainColor,),)),
+          
+         Container(
+             color: Colors.white,
+            padding: EdgeInsets.fromLTRB(30, 10, 0,30),
+            child: Text("Or you can Sign Up with :",style: TextStyle(color: Colors.black,fontSize: 18)),
+          ),
+          Container(color: Colors.white, padding: EdgeInsets.fromLTRB(0, 0, 0, 40),  
+             child: Row(children: [SizedBox(width: 15,),     
+                 Container(width: 180,height: 100,decoration: BoxDecoration(border: Border.all(color: genre)),
+                     child: InkWell(
+                              onTap:(){
+                                    setState(() {
+                                          selectedIndex = 0 ;
+                                          chooseGenre(selectedIndex)  ;
+                                                               });},        
+                     child: Center(child:Icon(FontAwesomeIcons.google,color: mainColor,size: 30,),),),),
+      
+        SizedBox(width: 20,),
+        Container(width: 180,height: 100,decoration: BoxDecoration(border: Border.all(color: other)),
+            child: InkWell(
+              onTap:(){
+                setState(() {
+                  selectedIndex = 1 ;
+                  chooseGenre(selectedIndex)  ;
+                });
+              } ,
+              child:Center(child:Icon(FontAwesomeIcons.facebook,color: mainColor,size:30)),)),
+          
+      ],),),
+          
+
+      
      ],),);}}
  

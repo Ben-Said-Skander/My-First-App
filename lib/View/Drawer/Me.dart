@@ -16,7 +16,7 @@ class _MeState extends State<Me> {
   Widget build(BuildContext context) {
     return Scaffold(
   
- // appBar: AppBar(title:Text("Account",style:TextStyle(fontSize:20,color:Colors.white)),backgroundColor: mainColor),
+
   backgroundColor: mainColor,
   body: ListView(children: [SizedBox(height: 30,),
    Divider(color: Colors.grey,),SizedBox(height:10),

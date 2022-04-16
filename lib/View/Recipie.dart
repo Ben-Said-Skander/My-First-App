@@ -76,19 +76,42 @@ class _RecipieState extends State<Recipie> {
                child:Text("Recipies Based on Eggs" ,  style: 
                      GoogleFonts.playfairDisplay(color: mainColor,fontSize: 20,fontWeight: FontWeight.w700))),Container(height: 15,color: Colors.white,),   
            Container(color: Colors.white,
-               height: 250, child: ListView.builder(scrollDirection: Axis.horizontal,
+               
+               height: 250, child: ListView.builder(
+               scrollDirection: Axis.horizontal,
                itemCount: Egg.length,
                itemBuilder: (context,i){
                      return Container(height: 180,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child:Column(children: [
-                          InkWell(child: Hero(child:Image.asset("IMAGE/Eggs/${Egg[i]["name"]}",height:180,width:250),tag: "${Egg[i]["tag"]}",
-                        ),onTap:(){Navigator.of(context).pushNamed("${Egg[i]["number"]}" );;}),SizedBox(height: 8,),
-                        Text("Food Name")
-                                    
+                       padding: const EdgeInsets.all(8.0),                   
+                       child: Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(20),
+                        color: Colors.white,
+                        boxShadow: [
+                             BoxShadow(
+                                color: Colors.grey.shade400,
+                                blurRadius: 2,                               
+                                offset: Offset(0, 0), )]),
+                         child: ListView(children: [SizedBox(height: 10,),
+                           
+                           InkWell(child:Hero(
+                                      child: Container(
+                                         decoration: BoxDecoration(
+                                         borderRadius: BorderRadius.circular(20),),
+                                         child:Container(
+                                           decoration: BoxDecoration(
+                                           borderRadius: BorderRadius.circular(20),),
+                                           child: Image.asset("IMAGE/Eggs/${Egg[i]["name"]}",height:180,width:250))),tag: "${Egg[i]["tag"]}",
                        
-                       ]));})),Container(height: 20,color: Colors.white,), 
+                                ),onTap:(){Navigator.of(context).pushNamed("${Egg[i]["number"]}" );;},),SizedBox(height: 8,),
+          
+                                       Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                         child: Text("Food Name"),
+                                       )
+          
+                  ])));})),Container(height: 20,color: Colors.white,), 
 
       
               Container(color: Colors.white,
@@ -99,14 +122,33 @@ class _RecipieState extends State<Recipie> {
                 itemBuilder: (context,i){
                      return Container(height: 180,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(children: [
-
-                         InkWell(child: Hero(child:Image.asset("IMAGE/High-Protein/${HP[i]["name"]}",height:180,width:250),tag:"${HP[i]["tag"]}" ,)
-                                       ,onTap:(){Navigator.of(context).pushNamed("${HP[i]["number"]}" );;}),SizedBox(height: 8,),
-
-                         Text("Food Name")
-                         ]))  ;})),Container(height: 20,color: Colors.white,), 
+                       padding: const EdgeInsets.all(8.0),                   
+                       child: Container(
+                       decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+                color: Colors.grey.shade400,
+                blurRadius: 2.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), 
+            )]),
+                         child: ListView(children: [SizedBox(height: 10,),
+                           
+                           InkWell(child:Hero(
+                                      child: ClipRRect(
+                                         borderRadius: BorderRadius.circular(20),
+                                         child:Image.asset("IMAGE/High-Protein/${HP[i]["name"]}",height:180,width:250)),tag: "${HP[i]["tag"]}",
+                       
+                                ),onTap:(){Navigator.of(context).pushNamed("${HP[i]["number"]}" );;},),SizedBox(height: 8,),
+          
+                                       Padding(
+                                        padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                         child: Text("Food Name"),
+                                       )
+          
+                  ])));})),Container(height: 20,color: Colors.white,), 
 
               
                Container(color: Colors.white,
@@ -118,13 +160,32 @@ class _RecipieState extends State<Recipie> {
                  itemBuilder: (context,i){
                      return Container(height: 180,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(children: [InkWell(child:Hero(child:Image.asset("IMAGE/HighCarbs/${highCarb[i]["name"]}",height:180,width:250),tag: "${highCarb[i]["tag"]}",
-                                                              ),onTap:(){Navigator.of(context).pushNamed("${highCarb[i]["number"]}" );;}),SizedBox(height: 8,),
+                       padding: const EdgeInsets.all(8.0),                   
+                       child: Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+               color: Colors.grey.shade400,
+                blurRadius: 2.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), // shadow direction: bottom right
+            )]),
+                         child: ListView(children: [SizedBox(height: 10,),
+                           
+                           InkWell(child:Hero(child: ClipRRect(
+                                         borderRadius: BorderRadius.circular(8),
+                                         child:Image.asset("IMAGE/HighCarbs/${highCarb[i]["name"]}",fit:BoxFit.fill,height:180,width:250)),tag: "${highCarb[i]["tag"]}",
+                       
+                                ),onTap:(){Navigator.of(context).pushNamed("${highCarb[i]["number"]}" );;},),SizedBox(height: 8,),
           
-                                                Text("Food Name")
+                                       Padding(
+                                         padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                         child: Text("Food Name"),
+                                       )
           
-                  ]));})),Container(height: 20,color: Colors.white,), 
+                  ])));})),Container(height: 20,color: Colors.white,), 
                      
            
               Container(color: Colors.white,
@@ -137,12 +198,34 @@ class _RecipieState extends State<Recipie> {
                 itemBuilder: (context,i){
                      return Container(height: 180,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(children: [InkWell(child: Hero(child:Image.asset("IMAGE/PreWorkout/${preWorkout[i]["name"]}",height:180,width:250),tag: "${preWorkout[i]["tag"]}",
-                                                              ),onTap:(){Navigator.of(context).pushNamed("${preWorkout[i]["number"]}" );;}),SizedBox(height: 8,),
-                                                 Text("Food Name")
-              
-                ]));})),Container(height: 20,color: Colors.white,), 
+                       padding: const EdgeInsets.all(8.0),                   
+                       child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+               color: Colors.grey.shade400,
+                blurRadius: 2.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), // shadow direction: bottom right
+            )]),
+                         child: ListView(children: [SizedBox(height: 10,),
+                           
+                           InkWell(child:Hero(
+                                      child: Container(
+                                         decoration: BoxDecoration(
+                                         borderRadius: BorderRadius.circular(20),),
+                                         child:Image.asset("IMAGE/PreWorkout/${preWorkout[i]["name"]}",height:180,width:250)),tag: "${preWorkout[i]["tag"]}",
+                       
+                                ),onTap:(){Navigator.of(context).pushNamed("${preWorkout[i]["number"]}" );;},),SizedBox(height: 8,),
+          
+                                       Padding(
+                                         padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                         child: Text("Food Name"),
+                                       )
+          
+                  ])));})),Container(height: 20,color: Colors.white,), 
 
              
               Container(color: Colors.white,
@@ -155,13 +238,34 @@ class _RecipieState extends State<Recipie> {
                 itemBuilder: (context,i){
                      return Container(height: 180,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(children: [ InkWell(child: Hero(child:Image.asset("IMAGE/Low-Sugar/${lowSugar[i]["name"]}",height:180,width:250),tag: "${lowSugar[i]["tag"]}",
-                                                               ),onTap:(){Navigator.of(context).pushNamed("${lowSugar[i]["number"]}" );;}),SizedBox(height: 8,),
-                                                               
-                                                 Text("Food Name")                                       
-                                                                     
-                ,]));})),Container(height: 15,color: Colors.white,), 
+                       padding: const EdgeInsets.all(8.0),                   
+                       child: Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+              color: Colors.grey.shade400,
+                blurRadius: 2.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), // shadow direction: bottom right
+            )]),
+                         child: ListView(children: [ SizedBox(height: 10,),
+                           
+                           InkWell(child:Hero(
+                                      child: Container(
+                                         decoration: BoxDecoration(
+                                         borderRadius: BorderRadius.circular(20),),
+                                         child:Image.asset("IMAGE/Low-Sugar/${lowSugar[i]["name"]}",height:180,width:250)),tag: "${lowSugar[i]["tag"]}",
+                       
+                                ),onTap:(){Navigator.of(context).pushNamed("${lowSugar[i]["number"]}" );;},),SizedBox(height: 8,),
+          
+                                       Padding(
+                                         padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                         child: Text("Food Name"),
+                                       )
+          
+                  ])));})),Container(height: 15,color: Colors.white,), 
 
                       
               Container(color: Colors.white,
@@ -172,16 +276,39 @@ class _RecipieState extends State<Recipie> {
                 height: 250,child: ListView.builder(scrollDirection: Axis.horizontal,
                 itemCount: keto.length,
                 itemBuilder: (context,i){
-                     return Container(height: 180,width: 250,
+                     return Container(height: 190,width: 250,
                        color: Colors.white,
-                       padding: const EdgeInsets.all(8.0),
-                       child: Column(children: [
-                         
-                         InkWell(child: Hero(child:Image.asset("IMAGE/Keto/${keto[i]["name"]}",height:180,width:250),tag: "${keto[i]["tag"]}",),
-                                        onTap:(){Navigator.of(context).pushNamed("${keto[i]["number"]}" );;}),SizedBox(height: 8,),
-                         Text("Food Name")               
-   
-                 ,]));})),Container(height: 15,color: Colors.white,), ]),
+                       padding: const EdgeInsets.all(5.0),                   
+                       child: Container(
+                        decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(30),
+                        color: Colors.white,
+                        boxShadow: [
+            BoxShadow(
+               color: Colors.grey.shade400,
+                blurRadius: 2.0,
+                spreadRadius: 0.0,
+                offset: Offset(0.0, 0.0), // shadow direction: bottom right
+            )
+        ],),
+                         child: ListView(children: [ 
+                             
+                             SizedBox(height: 10,),
+                             
+                              InkWell(child:Hero(
+                                           child:  Container( decoration: BoxDecoration(
+                                           borderRadius: BorderRadius.circular(20.0),),
+                                             child:Image.asset("IMAGE/Keto/${keto[i]["name"]}",height:180,width:250)),tag: "${keto[i]["tag"]}",
+                       
+                                  ),onTap:(){Navigator.of(context).pushNamed("${keto[i]["number"]}" );;},),
+                             SizedBox(height: 8,),
+          
+                              Padding(
+                                padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+                                child: Text("Food Name"),
+                              )
+          
+                  ])));})),Container(height: 15,color: Colors.white,), ]),
      
          ) ;     }}
       

@@ -45,11 +45,10 @@ import 'package:get/get.dart';
                  offset: Offset(4, 8), // Shadow position
       ),  ]),
   
-          child: Center(child:InkWell(child: Image.asset("IMAGE/yo.png",),onTap:(){} ,),),
+          child: Center(child:InkWell(child: Image.asset("IMAGE/yo.png",),onTap:(){
+              Navigator.of(context).pushNamed("Yoga") ;  } ,),),),SizedBox(width: 40,) ,
+          
          
-       
-       
-        ),SizedBox(width: 40,) ,
         Container(height: 130,width: 130,
             decoration: BoxDecoration(
             color: Colors.white  ,
@@ -60,7 +59,9 @@ import 'package:get/get.dart';
                  blurRadius: 4,
                  offset: Offset(4, 8), // Shadow position
       ),  ]),
-          child: Center(child:InkWell(child: Image.asset("IMAGE/bandd.jpg"),onTap:(){} ,),))
+          child: Center(child:InkWell(child: Image.asset("IMAGE/bandd.jpg"),onTap:(){
+            Navigator.of(context).pushNamed("Bands") ;
+          } ,),))
 
       ],),
     ), ),
@@ -68,6 +69,7 @@ import 'package:get/get.dart';
 
      Center(child: Padding(padding: EdgeInsets.fromLTRB(55, 10, 0, 20) ,
        child: Row(children: [
+       
         
         Container(height: 130,width: 130,
             decoration: BoxDecoration(
@@ -79,8 +81,12 @@ import 'package:get/get.dart';
                  blurRadius: 4,
                  offset: Offset(4, 8), // Shadow position
       ),  ]),
-        child: Center(child:InkWell(child: Image.asset("IMAGE/homeW.jpg"),onTap:(){} ,),)),SizedBox(width: 40,) ,
+        child: Center(child:InkWell(child: Image.asset("IMAGE/homeW.jpg"),onTap:(){
+          Navigator.of(context).pushNamed("HomeW") ;
+        } ,),)),SizedBox(width: 40,) ,
        
+      
+      
         Container(height: 130,width: 130,
             decoration: BoxDecoration(
             color: Colors.white  ,
@@ -91,7 +97,9 @@ import 'package:get/get.dart';
                  blurRadius: 4,
                  offset: Offset(4, 8), // Shadow position
       ),  ]),
-        child: Center(child:InkWell(child: Image.asset("IMAGE/cardio.jpg",),onTap:(){} ,)),)
+        child: Center(child:InkWell(child: Image.asset("IMAGE/cardio.jpg",),onTap:(){
+                   Navigator.of(context).pushNamed("Cardio") ;
+        } ,)),)
     
     ],),),     )],)
   

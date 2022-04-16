@@ -8,6 +8,7 @@ import 'package:getx/View/Recipie.dart';
 import 'package:getx/View/Plans.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+final GlobalKey<ScaffoldState> scaffoldKey = new GlobalKey<ScaffoldState>() ;
 
 class HomePage extends StatefulWidget {
   @override
@@ -24,7 +25,8 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      
+     
+      key: scaffoldKey,
       backgroundColor:Colors.grey.shade500,
       drawer: Container(color: Color.fromARGB(255, 31, 104, 87) ,
         child: Drawer(child: Container(color: Color.fromARGB(255, 31, 104, 87) ,
@@ -61,7 +63,11 @@ class _HomePageState extends State<HomePage> with SingleTickerProviderStateMixin
             
              ListTile(leading: Icon(FontAwesomeIcons.userDoctor,color: Colors.white,),title: InkWell(onTap:(){
               // Navigator.of(context).pushNamed("") ;
-             } ,child:Text("Contact a nutritionist",style:TextStyle(color: Colors.white))),) ,   
+             } ,child:Text("Contact a nutritionist",style:TextStyle(color: Colors.white))),) , 
+
+              ListTile(leading: Icon(FontAwesomeIcons.store,color: Colors.white,),title: InkWell(onTap:(){
+              // Navigator.of(context).pushNamed("") ;
+             } ,child:Text("Rate us in the Play Store",style:TextStyle(color: Colors.white))),) ,   
            
              ListTile(leading: Icon(Icons.settings,color:Colors.white),title: InkWell(onTap:(){
                Navigator.of(context).pushNamed("Setting()") ;
